@@ -17,6 +17,18 @@ namespace CAI_2_3_2023_POO_Carta
                 case 1: 
                     Tragos.tragosAutor();
                     break;
+                case 2:
+                    Console.WriteLine("No implementado.");
+                    break;
+                case 3:
+                    Console.WriteLine("No implementado.");
+                    break;
+                case 4:
+                    Console.WriteLine("No implementado.");
+                    break;
+                case 5:
+                    Console.WriteLine("No implementado.");
+                    break;
                 default : 
                     Console.WriteLine("Opción inválida.");
                     Console.WriteLine("Presione cualquier letra para continuar.");
