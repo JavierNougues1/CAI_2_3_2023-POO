@@ -20,7 +20,8 @@ namespace CAI_2_3_2023_POO_Futbolísta
                     nuevoJugador.AgregarJugador(nuevoJugador);
                     break;
                 case 2:
-
+                    Jugador buscarJugador = new Jugador();
+                    buscarJugador.BuscarJugador(buscarJugador);
                     break;
                 default:
                     Console.WriteLine("Opción inválida.");

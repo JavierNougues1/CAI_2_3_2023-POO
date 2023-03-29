@@ -83,5 +83,26 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 $"Club: {nuevoJugador._clubJugador} \n" +
                 $"Salario: {nuevoJugador._salarioJugador}");
         }
+
+        public void BuscarJugador(Jugador buscarJugador)
+        {
+            int dni = Validacion.PedirInt("Por favor, ingrese el DNI del jugador que desea buscar:");
+            for (int i = 0; i < jugadores.Count; i++)
+            {
+                if (jugadores[i]._DNI == dni)
+                {
+                    Console.WriteLine($"El jugador con el siguiente detalle se ha encontrado: \n" +
+                    $"DNI: {jugadores[i]._DNI} \n" +
+                    $"Nombre: {jugadores[i]._nombreJugador}\n" +
+                    $"Fecha de nacimiento: {jugadores[i]._fechaNacimientoJugador} \n" +
+                    $"Club: {jugadores[i]._clubJugador} \n" +
+                    $"Salario: {jugadores[i]._salarioJugador}");
+                }
+                else
+                {
+                    Console.WriteLine($"No existe un jugador con el DNI: {dni}.");
+                }
+            }
+        }
     }
 }
