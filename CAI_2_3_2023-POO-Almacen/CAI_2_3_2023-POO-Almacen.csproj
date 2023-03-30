@@ -7,7 +7,7 @@
     <ProjectGuid>{89900051-8CA0-4CBF-B5B4-3E7842436004}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CAI_2_3_2023_POO_Almacen</RootNamespace>
-    <AssemblyName>CAI_2_3_2023_POO_Almacen</AssemblyName>
+    <AssemblyName>CAI_2_3_2023-POO-Almacen</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stock.cs" />
+    <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

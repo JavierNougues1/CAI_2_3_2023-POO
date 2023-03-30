@@ -10,6 +10,26 @@ namespace CAI_2_3_2023_POO_Almacen
     {
         static void Main(string[] args)
         {
+            while (true) 
+            {
+                Console.Clear();
+                Console.WriteLine("Bienvenidos al 'Sistema de Gestión de Almacenes'");
+                int opcMenu = Validacion.OpcionMenu("Seleccione la acción que desea realizar: \n1-Visualizar stock \n2- Cargar producto \n3- Salir", 0, 3);
+                switch (opcMenu)
+                {
+                    case 1:
+                        Stock.VisualizarStock();
+                        continue;
+                    case 2:
+                        Producto.CargarProducto();
+                        continue;
+                    case 3:
+                        System.Environment.Exit(0);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }
