@@ -20,9 +20,9 @@ namespace CAI_2_3_2023_POO_Futbolísta
                     Console.WriteLine("Opción inválida, intente nuevamente:");
                     continue;
                 }
+                return input;
                 break;
             }
-            return input;
         }
 
         public static string PedirString(string mensaje)
@@ -41,10 +41,12 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 {
                     Console.WriteLine("El nombre del jugador no puede contener números, intente nuevamente:");
                 }
+                return input;
+                break;
             }
         }
 
-        internal static int PedirInt(string mensaje)
+        public static int PedirInt(string mensaje)
         {
             Console.WriteLine(mensaje);
             int input;
@@ -59,6 +61,8 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 {
                     Console.WriteLine("La edad del jugador solo puede contener números, intente nuevamente:");
                 }
+                return input;
+                break;
             }
         }
     }
