@@ -11,16 +11,6 @@ namespace CAI_2_3_2023_POO_Almacen
             {
                 Console.WriteLine(mensaje);
                 input = int.Parse(Console.ReadLine());
-                if (input.ToString().Length == 0) 
-                {
-                    Console.WriteLine("Debe ingresar un valor:");
-                    continue;
-                }
-                if (int.TryParse(input.ToString(), out int numero))
-                {
-                    Console.WriteLine("El valor ingresado debe ser un número");
-                    continue;
-                }
                 if (input < min || input > max)
                 {
                     Console.WriteLine($"El valor ingresado deber ser entre: {min} y {max}.");
