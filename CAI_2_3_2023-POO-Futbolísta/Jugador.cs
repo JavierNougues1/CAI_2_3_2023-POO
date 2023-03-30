@@ -148,5 +148,21 @@ namespace CAI_2_3_2023_POO_Futbolísta
             }
             
         }
+        public void DesplegarJugador()
+        {
+            foreach (var jugador in jugadores)
+            {
+                Console.Clear();
+                Console.WriteLine("Lista de jugadores registrados:");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                Console.Write($"DNI: {jugador._DNI} Nombre: {jugador._nombreJugador} Fecha de Nacimiento: {jugador._fechaNacimientoJugador} Club: {jugador._clubJugador} Salario: ${jugador._salarioJugador}");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            }
+            if (jugadores.Count == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("No hay jugadores registrados.");
+            }
+        }
     }
 }
