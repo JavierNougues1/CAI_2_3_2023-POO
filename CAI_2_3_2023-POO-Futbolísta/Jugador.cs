@@ -29,28 +29,38 @@ namespace CAI_2_3_2023_POO_Futbolísta
 
         public void AgregarJugador(Jugador nuevoJugador)
         {
-            PedirDatosJugador(nuevoJugador);
-            if (!ValidarJugadorNoExista(nuevoJugador))
+            Console.Clear();
+            int opcMenu = Validacion.OpcionMenu("1- Agregar jugador.\n2- Volver al menú principal.", 1, 2);
+            switch (opcMenu)
             {
-                RegistrarNuevoJugador(nuevoJugador);
-                MostrarJugadorRegistrado(nuevoJugador);
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine($"Ya existe un jugador registrado bajo el DNI: {nuevoJugador._DNI}.");
-                Console.WriteLine("Presione una tecla para continuar.");
-                Console.ReadKey();
-                int opcMenu = Validacion.OpcionMenu("1- Volver al menú principal", 1, 1);
-                switch (opcMenu) { case 1: break; default: break; }
+                case 1:
+                    Console.Clear();
+                    PedirDatosJugador(nuevoJugador);
+                    if (!ValidarJugadorNoExista(nuevoJugador))
+                    {
+                        RegistrarNuevoJugador(nuevoJugador);
+                        MostrarJugadorRegistrado(nuevoJugador);
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine($"Ya existe un jugador registrado bajo el DNI: {nuevoJugador._DNI}.");
+                        Console.WriteLine("Presione una tecla para continuar.");
+                        Console.ReadKey();
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
             }
         }
 
         private void PedirDatosJugador(Jugador nuevoJugador)
         {
             Console.Clear();
-            Console.WriteLine("Registro de Jugadores \n");
-            Console.WriteLine("------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Registro de Jugadores");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------");
             nuevoJugador._DNI = Validacion.PedirInt("Ingrese el DNI del jugador que desea registrar:");
             nuevoJugador._nombreJugador = Validacion.PedirString("Ingrese el nombre del jugador que desea registrar:");
             nuevoJugador._fechaNacimientoJugador = DateTime.Parse( Validacion.PedirString("Ingrese la fecha de nacimiento del jugador que desea resgistrar:"));
@@ -61,7 +71,14 @@ namespace CAI_2_3_2023_POO_Futbolísta
         private bool ValidarJugadorNoExista(Jugador nuevoJugador)
         {
             bool existe = false;
-            for(int i = 0; i < jugadores.Count; i++)
+            foreach (var jugador in jugadores)
+            {
+                if (jugador._DNI == nuevoJugador._DNI)
+                {
+                    existe = true;
+                }
+            }
+            for (int i = 0; i < jugadores.Count; i++)
             {
                 if (jugadores[i]._DNI == nuevoJugador._DNI)
                 {
@@ -98,11 +115,13 @@ namespace CAI_2_3_2023_POO_Futbolísta
             switch (opcMenu)
             {
                 case 1:
+                    Console.Clear();
                     int dni = Validacion.PedirInt("Por favor, ingrese el DNI del jugador que desea buscar:");
                     for (int i = 0; i < jugadores.Count; i++)
                     {
                         if (jugadores[i]._DNI == dni)
                         {
+                            Console.Clear();
                             Console.WriteLine($"El jugador con el siguiente detalle se ha encontrado: \n" +
                             $"DNI: {jugadores[i]._DNI} \n" +
                             $"Nombre: {jugadores[i]._nombreJugador}\n" +
@@ -112,11 +131,13 @@ namespace CAI_2_3_2023_POO_Futbolísta
                         }
                         else
                         {
+                            Console.Clear();
                             Console.WriteLine($"No existe un jugador con el DNI: {dni}.");
                         }
                     }
                     if (jugadores.Count == 0)
                     {
+                        Console.Clear();
                         Console.WriteLine($"No hay jugadores registrados, por lo que no existe un jugador con el DNI: {dni}.");
                     }
                     break;

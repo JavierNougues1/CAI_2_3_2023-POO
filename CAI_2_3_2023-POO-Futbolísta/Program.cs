@@ -13,6 +13,7 @@ namespace CAI_2_3_2023_POO_Futbolísta
         {
             while (true) 
             {
+                Console.Clear();
                 Console.WriteLine("Bienvenido al sistema de 'Almacenamiento de Futbolístas'!");
                 int opcMenu = Validacion.OpcionMenu("Qué desea hacer?: \n1- Agregar jugador \n2- Buscar jugador \n3- Salir del sistema", 1, 3);
                 switch (opcMenu)
@@ -24,12 +25,15 @@ namespace CAI_2_3_2023_POO_Futbolísta
                     case 2:
                         Jugador buscarJugador = new Jugador();
                         buscarJugador.BuscarJugador(buscarJugador);
+                        
+                        
                         continue;
                         
                     case 3:
                         System.Environment.Exit(0);
                         break;
                     default:
+                        Console.Clear();
                         Console.WriteLine("Opción inválida.");
                         continue;
                 }
