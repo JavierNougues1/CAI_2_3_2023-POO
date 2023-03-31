@@ -18,10 +18,10 @@ namespace CAI_2_3_2023_POO_Almacen
                 switch (opcMenu)
                 {
                     case 1:
-                        Stock.VisualizarStock();
+                        var visualizarStock = Stock.VisualizarStock();
                         continue;
                     case 2:
-                        Producto.CargarProducto();
+                        var cargarProducto = Producto.CargarProducto();
                         continue;
                     case 3:
                         System.Environment.Exit(0);
