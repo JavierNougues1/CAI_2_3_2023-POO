@@ -40,8 +40,8 @@ namespace CAI_2_3_2023_POO_Carta
                         Console.WriteLine("Presione cualquier letra para continuar.");
                         Console.ReadKey();
                         continue;
-
                 }
+                break;
             }
         }
     }

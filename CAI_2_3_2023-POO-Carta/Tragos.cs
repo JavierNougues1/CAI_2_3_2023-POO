@@ -24,6 +24,7 @@ namespace CAI_2_3_2023_POO_Carta
                     case 0:
                         break;
                 }
+                break;
             }
             
         }
