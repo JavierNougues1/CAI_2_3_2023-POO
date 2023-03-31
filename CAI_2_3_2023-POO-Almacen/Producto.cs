@@ -15,9 +15,9 @@ namespace CAI_2_3_2023_POO_Almacen
         public static object CargarProducto()
         {
             Producto nuevoProducto = new Producto();
-            Console.Clear();
             while(true)
             {
+                Console.Clear();
                 int opcMenu = Validacion.OpcionMenu("Menu de Carga de Productos \n------------------- \n1- Cargar Nuevo Producto \n0- Volver al Menu Principal ",0,1);
                 switch(opcMenu)
                 {

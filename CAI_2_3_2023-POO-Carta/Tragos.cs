@@ -6,21 +6,26 @@ namespace CAI_2_3_2023_POO_Carta
     {
         public static void tragosAutor()
         {
-            Console.Clear();
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("En 'Siete Fuegos' contamos con una reducida pero exquisita carta de tragos los cuales lo llevarán a lugares inóspitos de su imaginación:");
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
-            int opcMenu = Validacion.opcionMenu("1- No estoy seguro que ordenar, prefiero que me sorprendan con un trago!!! \n2- Visualizar carta de tragos:", 1, 2);
-            switch (opcMenu)
+            while (true)
             {
-                case 1:
-                    generarTrago();
-                    break;
-                case 2:
-                    visualizarTrago();
-                    break;
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("En 'Siete Fuegos' contamos con una reducida pero exquisita carta de tragos los cuales lo llevarán a lugares inóspitos de su imaginación:");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+                int opcMenu = Validacion.opcionMenu("1- No estoy seguro que ordenar, prefiero que me sorprendan con un trago!!! \n2- Visualizar carta de tragos: \n0- Volver al Menú Principal", 0, 2);
+                switch (opcMenu)
+                {
+                    case 1:
+                        generarTrago();
+                        continue;
+                    case 2:
+                        visualizarTrago();
+                        continue;
+                    case 0:
+                        break;
+                }
             }
-
+            
         }
 
         private static void generarTrago()

@@ -20,6 +20,7 @@ namespace CAI_2_3_2023_POO_Almacen
             {
                 case 0: break;
                 case 1:
+                    Console.Clear();
                     int opcMenu1 = Validacion.OpcionMenu("Seleccione el producto a visualizar. \n1- Arvejas \n2- Lentejas \n3- Garbanzos \n4- Fideos", 1, 4);
                     switch (opcMenu1)
                     {
@@ -49,6 +50,7 @@ namespace CAI_2_3_2023_POO_Almacen
         { 
             Producto producto1 = new Producto();
             int cant = 0;
+            Console.Clear();
             foreach (var producto in producto1.productos)
             {
                 if (producto._nombreProducto == prod)

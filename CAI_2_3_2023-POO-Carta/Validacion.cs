@@ -16,6 +16,11 @@ namespace CAI_2_3_2023_POO_Carta
                     Console.WriteLine("Opción inválida, intente nuevamente:");
                     continue;
                 }
+                if(input.ToString().Length == 0) 
+                {
+                    Console.WriteLine("Opción inválida, intente nuevamente:");
+                    continue;
+                }
                 break;
             }
             return input;
