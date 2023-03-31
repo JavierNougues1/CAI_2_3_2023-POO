@@ -27,19 +27,20 @@ namespace CAI_2_3_2023_POO_Futbolísta
             _salarioJugador = int.Parse(datos[4]);
         }
 
-        public void AgregarJugador(Jugador nuevoJugador)
+        public static Jugador AgregarJugador()
         {
+            Jugador nuevoJugador = new Jugador();
             Console.Clear();
-            int opcMenu = Validacion.OpcionMenu("1- Agregar jugador.\n2- Volver al menú principal.", 1, 2);
+            int opcMenu = Validacion.OpcionMenu("1- Agregar jugador.\n2- Volver al menú principal. \n0- Salir", 1, 2);
             switch (opcMenu)
             {
                 case 1:
                     Console.Clear();
-                    PedirDatosJugador(nuevoJugador);
-                    if (!ValidarJugadorNoExista(nuevoJugador))
+                    nuevoJugador.PedirDatosJugador();
+                    if (!nuevoJugador.ValidarJugadorNoExista())
                     {
-                        RegistrarNuevoJugador(nuevoJugador);
-                        MostrarJugadorRegistrado(nuevoJugador);
+                        nuevoJugador.RegistrarNuevoJugador(nuevoJugador);
+                        nuevoJugador.MostrarJugadorRegistrado();
                     }
                     else
                     {
@@ -54,33 +55,34 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 default:
                     break;
             }
+            return nuevoJugador;
         }
 
-        private void PedirDatosJugador(Jugador nuevoJugador)
+        private void PedirDatosJugador()
         {
             Console.Clear();
             Console.WriteLine("Registro de Jugadores");
             Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------");
-            nuevoJugador._DNI = Validacion.PedirInt("Ingrese el DNI del jugador que desea registrar:");
-            nuevoJugador._nombreJugador = Validacion.PedirString("Ingrese el nombre del jugador que desea registrar:");
-            nuevoJugador._fechaNacimientoJugador = DateTime.Parse( Validacion.PedirString("Ingrese la fecha de nacimiento del jugador que desea resgistrar:"));
-            nuevoJugador._clubJugador = Validacion.PedirString("Ingrese el club del jugador que desea registrar:");
-            nuevoJugador._salarioJugador = Validacion.PedirInt("Ingrese el salario del jugador que desea registrar:");     
-        }
+            _DNI = Validacion.PedirInt("Ingrese el DNI del jugador que desea registrar:");
+            _nombreJugador = Validacion.PedirString("Ingrese el nombre del jugador que desea registrar:");
+            _fechaNacimientoJugador = DateTime.Parse( Validacion.PedirString("Ingrese la fecha de nacimiento del jugador que desea resgistrar:"));
+            _clubJugador = Validacion.PedirString("Ingrese el club del jugador que desea registrar:");
+            _salarioJugador = Validacion.PedirInt("Ingrese el salario del jugador que desea registrar:");     
+        }   
 
-        private bool ValidarJugadorNoExista(Jugador nuevoJugador)
+        private bool ValidarJugadorNoExista()
         {
             bool existe = false;
             foreach (var jugador in jugadores)
             {
-                if (jugador._DNI == nuevoJugador._DNI)
+                if (jugador._DNI == _DNI)
                 {
                     existe = true;
                 }
             }
             for (int i = 0; i < jugadores.Count; i++)
             {
-                if (jugadores[i]._DNI == nuevoJugador._DNI)
+                if (jugadores[i]._DNI == _DNI)
                 {
                     existe = true;
                 }
@@ -94,22 +96,23 @@ namespace CAI_2_3_2023_POO_Futbolísta
         }
 
 
-        private void MostrarJugadorRegistrado(Jugador nuevoJugador)
+        private void MostrarJugadorRegistrado()
         {
             Console.Clear();
             Console.WriteLine($"El jugador con el siguiente detalle se ha agregado satisfactoriamente: \n" +
-                $"DNI: {nuevoJugador._DNI} \n" + 
-                $"Nombre: {nuevoJugador._nombreJugador}\n" +
-                $"Fecha de nacimiento: {nuevoJugador._fechaNacimientoJugador} \n" +
-                $"Club: {nuevoJugador._clubJugador} \n" +
-                $"Salario: ${nuevoJugador._salarioJugador}\n"  +
+                $"DNI: {_DNI} \n" + 
+                $"Nombre: {_nombreJugador}\n" +
+                $"Fecha de nacimiento: {_fechaNacimientoJugador} \n" +
+                $"Club: {_clubJugador} \n" +
+                $"Salario: ${_salarioJugador}\n"  +
                 $"-------------------------------------------------------------------------------------------\n" + 
                 $"Presione una tecla para continuar.");
             Console.ReadKey();
         }
 
-        public void BuscarJugador(Jugador buscarJugador)
+        public static Jugador BuscarJugador()
         {
+            Jugador buscarJugador = new Jugador();
             Console.Clear();
             int opcMenu = Validacion.OpcionMenu("1- Buscar jugador.\n2- Volver al menú principal.", 1, 2);
             switch (opcMenu)
@@ -117,17 +120,17 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 case 1:
                     Console.Clear();
                     int dni = Validacion.PedirInt("Por favor, ingrese el DNI del jugador que desea buscar:");
-                    for (int i = 0; i < jugadores.Count; i++)
+                    for (int i = 0; i < buscarJugador.jugadores.Count; i++)
                     {
-                        if (jugadores[i]._DNI == dni)
+                        if (buscarJugador.jugadores[i]._DNI == dni)
                         {
                             Console.Clear();
                             Console.WriteLine($"El jugador con el siguiente detalle se ha encontrado: \n" +
-                            $"DNI: {jugadores[i]._DNI} \n" +
-                            $"Nombre: {jugadores[i]._nombreJugador}\n" +
-                            $"Fecha de nacimiento: {jugadores[i]._fechaNacimientoJugador} \n" +
-                            $"Club: {jugadores[i]._clubJugador} \n" +
-                            $"Salario: {jugadores[i]._salarioJugador}");
+                            $"DNI: {buscarJugador.jugadores[i]._DNI} \n" +
+                            $"Nombre: {buscarJugador.jugadores[i]._nombreJugador}\n" +
+                            $"Fecha de nacimiento: {buscarJugador.jugadores[i]._fechaNacimientoJugador} \n" +
+                            $"Club: {buscarJugador.jugadores[i]._clubJugador} \n" +
+                            $"Salario: {buscarJugador.jugadores[i]._salarioJugador}");
                         }
                         else
                         {
@@ -135,7 +138,7 @@ namespace CAI_2_3_2023_POO_Futbolísta
                             Console.WriteLine($"No existe un jugador con el DNI: {dni}.");
                         }
                     }
-                    if (jugadores.Count == 0)
+                    if (buscarJugador.jugadores.Count == 0)
                     {
                         Console.Clear();
                         Console.WriteLine($"No hay jugadores registrados, por lo que no existe un jugador con el DNI: {dni}.");
@@ -146,11 +149,12 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 default:
                     break;
             }
-            
+            return buscarJugador;
         }
-        public void DesplegarJugador()
+        public static Jugador DesplegarJugador()
         {
-            foreach (var jugador in jugadores)
+            Jugador desplegarJugador = new Jugador();
+            foreach (var jugador in desplegarJugador.jugadores)
             {
                 Console.Clear();
                 Console.WriteLine("Lista de jugadores registrados:");
@@ -158,11 +162,12 @@ namespace CAI_2_3_2023_POO_Futbolísta
                 Console.Write($"DNI: {jugador._DNI} Nombre: {jugador._nombreJugador} Fecha de Nacimiento: {jugador._fechaNacimientoJugador} Club: {jugador._clubJugador} Salario: ${jugador._salarioJugador}");
                 Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             }
-            if (jugadores.Count == 0)
+            if (desplegarJugador.jugadores.Count == 0)
             {
                 Console.Clear();
                 Console.WriteLine("No hay jugadores registrados.");
             }
+            return desplegarJugador;
         }
     }
 }
