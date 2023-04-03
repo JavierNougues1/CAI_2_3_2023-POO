@@ -10,9 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAI_2_3_2023-POO-Almacen", "CAI_2_3_2023-POO-Almacen\CAI_2_3_2023-POO-Almacen.csproj", "{89900051-8CA0-4CBF-B5B4-3E7842436004}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validacion", "Validacion", "{5D51B8F9-7406-4C59-B21E-B0D5C162C215}"
-	ProjectSection(SolutionItems) = preProject
-		CAI_2_3_2023-POO-Futbolísta\Validacion.cs = CAI_2_3_2023-POO-Futbolísta\Validacion.cs
-	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAI_2_3_2023-POO-Agenda", "CAI_2_3_2023-POO-Agenda\CAI_2_3_2023-POO-Agenda.csproj", "{EF41B361-0B23-4E2D-AB1C-8791DD29B8C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +31,10 @@ Global
 		{89900051-8CA0-4CBF-B5B4-3E7842436004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89900051-8CA0-4CBF-B5B4-3E7842436004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89900051-8CA0-4CBF-B5B4-3E7842436004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF41B361-0B23-4E2D-AB1C-8791DD29B8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF41B361-0B23-4E2D-AB1C-8791DD29B8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF41B361-0B23-4E2D-AB1C-8791DD29B8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF41B361-0B23-4E2D-AB1C-8791DD29B8C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
