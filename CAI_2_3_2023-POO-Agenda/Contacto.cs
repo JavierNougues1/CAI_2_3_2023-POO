@@ -13,8 +13,9 @@ namespace CAI_2_3_2023_POO_Agenda
         public DateTime _fechaNacimiento { get; set; }
         public int _llamadas { get; set; }
 
-        public static Contacto PedirDatos()
+        public static Contacto PedirDatosAgregar()
         {
+            Console.Clear();
             Contacto nuevoContacto = new Contacto();
             int codContacto;
             while (true)
@@ -38,9 +39,34 @@ namespace CAI_2_3_2023_POO_Agenda
             nuevoContacto._llamadas = 0;
 
             Agenda.AgregarContacto(nuevoContacto);
+
+            Console.Clear();
             Console.WriteLine("\nContacto agregado satisfactoriamente! \nPresione una tecla para continuar.");
             Console.ReadKey();
             return nuevoContacto;
+        }
+        public static Contacto PedirDatosEliminar()
+        {
+            Console.Clear();
+            Contacto eliminarContacto = new Contacto();
+            int codContacto;
+            while (true)
+            {
+                codContacto = Validacion.PedirInt("Ingrese un código de contacto:");
+                bool validarContacto = Agenda.ValidarCodigoContacto(codContacto);
+                if (validarContacto)
+                {
+                    Console.Clear();
+                    Console.WriteLine("El código de contacto ingresado ya se encuentra registrado.");
+                    continue;
+                }
+                break;
+            }
+            Agenda.EliminarContacto(codContacto);
+            Console.WriteLine("\nContacto eliminado satisfactoriamente! \nPresione una tecla para continuar.");
+            Console.ReadKey();
+            return eliminarContacto;
+
         }
 
         public int Edad()
@@ -52,6 +78,7 @@ namespace CAI_2_3_2023_POO_Agenda
         }
         public void Llamar()
         {
+            Console.Clear();
             Agenda llamarContacto = new Agenda();
             int codContacto = PedirCodigoContacto();
             foreach (var contacto in llamarContacto._contactos)

@@ -21,13 +21,13 @@ namespace CAI_2_3_2023_POO_Agenda
                         contactoActivo.Llamar();
                         continue;
                     case 2:
-                        Contacto.PedirDatos();
+                        Contacto.PedirDatosAgregar();
                         continue;
                     case 3:
-                        //Agenda.EliminarContacto();
+                        Contacto.PedirDatosEliminar();
                         continue;
                     case 4:
-                        //Agenda.TraerContactoFrecuente();
+                        Agenda.TraerContactoFrecuente();
                         continue;
                     default: continue;
                 }

@@ -21,13 +21,14 @@ namespace CAI_2_3_2023_POO_Agenda
             Agenda agenda = new Agenda();
             agenda._contactos.Add(nuevoContacto);
         }
-        public void EliminarContacto(int codContacto)
+        public static void EliminarContacto(int codContacto)
         {
-            foreach (var contacto in _contactos)
+            Agenda agenda = new Agenda();
+            foreach (var contacto in agenda._contactos)
             {
                 if (contacto._codigoContacto == codContacto)
                 {
-                    _contactos.Remove(contacto);
+                    agenda._contactos.Remove(contacto);
                 }
                 else
                 {
@@ -36,15 +37,16 @@ namespace CAI_2_3_2023_POO_Agenda
                 break;
             }
         }
-        public Contacto TraerContactoFrecuente()
+        public static Contacto TraerContactoFrecuente()
         {
+            Agenda agenda = new Agenda();
             Contacto contactoFrecuente = new Contacto();
             int contador = 0;
-            if (_contactos == null)
+            if (agenda._contactos == null)
             {
                 Console.WriteLine("No posee contactos registrados.");
             }
-            foreach (var contacto in _contactos)
+            foreach (var contacto in agenda._contactos)
             {
                 if (contacto._llamadas > contador)
                 {
