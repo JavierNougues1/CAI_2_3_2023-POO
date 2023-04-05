@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         static void Main(string[] args)
         {
             //Me falta el parametro de la lista de contactos.
-            Agenda agenda = new Agenda("Agenda1", "Tipo1", , 100);
+            Agenda agenda = new Agenda("Agenda1", "Tipo1", 100);
 
             while (true) 
             {
@@ -32,10 +33,10 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
                         LlamarContacto();
                         continue;
                     case 4:
-                        ListarContactos();
+                        agenda.ListarContactos();
                         continue;
                     case 5:
-                        TraerContactoFrecuente();
+                        agenda.TraerContactoFrecuente();
                         continue;
 
                     default: break;
@@ -45,16 +46,16 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         }
         private static void AgregarContacto()
         {
-            Contacto nuevoContacto = null;
-            nuevoContacto._codigoContacto = Validacion.PedirInt("Código de Contacto:");
-            nuevoContacto._nombreContacto = Validacion.PedirString("Nombre Contacto:");
-            nuevoContacto._apelidoContacto = Validacion.PedirString("Apellido Contacto");
-            nuevoContacto._telefonoContacto = Validacion.PedirString("Teléfono Contacto:");
-            nuevoContacto._fechaNacimiento = Validacion.PedirFecha("Fecha Nacimiento Contacto");
-            nuevoContacto._direccionContacto = Validacion.PedirString("Dirección Contacto:");
-            nuevoContacto._llamadas = 0;
+            
+            int cod = Validacion.PedirInt("Código de Contacto:");
+            string nombre = Validacion.PedirString("Nombre Contacto:");
+            string apelido = Validacion.PedirString("Apellido Contacto");
+            string tel = Validacion.PedirString("Teléfono Contacto:");
+            DateTime fecha= Validacion.PedirFecha("Fecha Nacimiento Contacto");
+            string direc = Validacion.PedirString("Dirección Contacto:");
+            int llamadas = 0;
 
-            agenda.AgregarContacto(nuevoContacto);
+            Agenda.AgregarContacto(cod, nombre, apelido, tel, direc, fecha, llamadas);
 
             Console.WriteLine("Se agregó el contacto satisfactoriamente. \nPresione una tecla para continuar.");
             Console.ReadKey();
@@ -63,13 +64,13 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         {
             int codContacto = Validacion.PedirInt("Ingrese el código del contacto a eliminar:");
 
-            agenda.EiminarContacto(codContacto);
+            EiminarContacto(codContacto);
 
             Console.WriteLine("Se agregó el contacto satisfactoriamente. \nPresione una tecla para continuar.");
             Console.ReadKey();
 
         }
-        private void LlamarContacto()
+        private static void LlamarContacto()
         {
             Contacto contactoBuscado = null;
             int codContacto = Validacion.PedirInt("Ingrese código de contacto:");
