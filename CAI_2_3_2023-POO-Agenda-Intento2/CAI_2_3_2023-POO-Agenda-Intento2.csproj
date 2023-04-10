@@ -7,7 +7,7 @@
     <ProjectGuid>{F43A28B7-A5F7-42DB-805B-603661B9CD9A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CAI_2_3_2023_POO_Agenda_Intento2</RootNamespace>
-    <AssemblyName>CAI_2_3_2023_POO_Agenda_Intento2</AssemblyName>
+    <AssemblyName>CAI_2_3_2023-POO-Agenda-Intento2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agenda.cs" />
+    <Compile Include="Contacto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

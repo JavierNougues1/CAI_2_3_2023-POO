@@ -64,7 +64,7 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         {
             int codContacto = Validacion.PedirInt("Ingrese el código del contacto a eliminar:");
 
-            EiminarContacto(codContacto);
+            Agenda.EliminarContacto(codContacto);
 
             Console.WriteLine("Se agregó el contacto satisfactoriamente. \nPresione una tecla para continuar.");
             Console.ReadKey();
