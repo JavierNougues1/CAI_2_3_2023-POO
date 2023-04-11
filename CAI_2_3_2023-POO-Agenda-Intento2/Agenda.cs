@@ -17,16 +17,16 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         {
             _nombre = nombre;
             _tipo = tipo;
-            
             _cantidadMaxContactos = cantidadMaxContactos;
         }
 
-        public static void AgregarContacto(int codigoContacto, string nombreContacto, string apelidoContacto, string telefonoContacto, string direccionContacto, DateTime fechaNacimiento, int llamadas)
+        public void AgregarContacto(int codigoContacto, string nombreContacto, string apelidoContacto, int telefonoContacto, string direccionContacto, DateTime fechaNacimiento, int llamadas)
         {
-            Contacto nuevoContacto = new Contacto(codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas);
-            _contactos.Add(nuevoContacto);
+            //Contacto nuevoContacto = new Contacto(codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas);
+            //_contactos.Add(nuevoContacto);
+            _contactos.Add(new Contacto (codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas));
         }
-        public static void EliminarContacto(int codContacto)
+        public void EliminarContacto(int codContacto)
         {
             if (_contactos == null)
             {
@@ -37,12 +37,12 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
                 if (contacto._codigoContacto == codContacto)
                 {
                     _contactos.Remove(contacto);
-                    break;
                 }
                 else
                 {
                     throw new Exception("El código de contacto ingresado no corresponde a un contacto registrado.");
                 }
+                break;
             }
         }
         public Contacto TraerContactoFrecuente()
@@ -69,7 +69,7 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         }
         public void ListarContactos()
         {
-            if (_contactos == null)
+            if (_contactos == null || _contactos.Count == 0)
             {
                 throw new Exception("No posee contactos registrados.");
             }
@@ -80,10 +80,10 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
             Console.WriteLine("\nPresione una tecla para continuar.");
             Console.ReadKey();
         }
-        public Contacto BuscarContacto(int codContacto)
+        public bool BuscarContacto(int codContacto)
         {
-            Contacto contactobuscado = null;
-            if (_contactos == null)
+            bool existe = false;
+            if (_contactos == null || _contactos.Count == 0)
             {
                 throw new Exception("No posee contactos registrados.");
             }
@@ -91,7 +91,7 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
             {
                 if (contacto._codigoContacto == codContacto)
                 {
-                    contactobuscado = contacto;
+                    existe = true;
                 }
                 else
                 {
@@ -99,7 +99,7 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
                 }
                 break;
             }
-            return contactobuscado;
+            return existe;
         }
     }
 }
