@@ -13,12 +13,12 @@ namespace CAI_2_3_2023_POO_Agenda_Intento3
         private int _cantMaxContactos { get; set; }
         private List<Contacto> _contactos = new List<Contacto>();
 
-        public Agenda(string nombre, string tipo, int cantMaxContactos, List<Contacto> contactos)
+        public Agenda(string nombre, string tipo, int cantMaxContactos)//, List<Contacto> contactos)
         {
             _nombre = nombre;
             _tipo = tipo;
             _cantMaxContactos = cantMaxContactos;
-            _contactos = contactos;
+            //_contactos = contactos;
         }
 
         public void AgregarContacto(int codContacto, string nombreContacto, string apellidoContacto, string telefonoContacto, string direccionContacto, DateTime fechaNacContacto, int llamadasContacto)
