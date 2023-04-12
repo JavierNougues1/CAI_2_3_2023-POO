@@ -21,8 +21,17 @@ namespace CAI_2_3_2023_POO_Agenda_Intento3
             _direccionContacto = direccionContacto;
             _fechaNacContacto = fechaNacContacto;
             _llamadasContacto = llamadasContacto;
-
-
+        }
+        public int Edad()
+        {
+            int edadCalculada;
+            TimeSpan edad = _fechaNacContacto - DateTime.Today;  
+            edadCalculada = Convert.ToInt32(edad);
+            return edadCalculada;
+        }
+        public void Llamar()
+        {
+            _llamadasContacto++;
         }
     }
 }
