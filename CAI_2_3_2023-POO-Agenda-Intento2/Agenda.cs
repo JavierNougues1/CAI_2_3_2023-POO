@@ -22,9 +22,9 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
 
         public void AgregarContacto(int codigoContacto, string nombreContacto, string apelidoContacto, int telefonoContacto, string direccionContacto, DateTime fechaNacimiento, int llamadas)
         {
-            //Contacto nuevoContacto = new Contacto(codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas);
-            //_contactos.Add(nuevoContacto);
-            _contactos.Add(new Contacto (codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas));
+            Contacto nuevoContacto = new Contacto(codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas);
+            _contactos.Add(nuevoContacto);
+            //_contactos.Add(new Contacto(codigoContacto, nombreContacto, apelidoContacto, telefonoContacto, direccionContacto, fechaNacimiento, llamadas));
         }
         public void EliminarContacto(int codContacto)
         {

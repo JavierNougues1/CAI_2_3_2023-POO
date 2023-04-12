@@ -13,37 +13,48 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
         {
             //Me falta el parametro de la lista de contactos.
             Agenda agenda = new Agenda("Agenda1", "Tipo1", 100);
-
-            while (true) 
+            
+            
+            while (true)
             {
-                int opcMenu = Validacion.Menu("1- Agregar Contacto \n2- Eliminar Contacto \n3- Llamar Contacto \n4- Listar Contactos \n5- Mostrar Contacto Frecuente \n0- Salir", 0, 5);
-                switch (opcMenu)
+                try
                 {
-                    case 0: 
-                        Console.WriteLine("Gracias por utilizar nustro sistema. \nPresione una tecla para continuar.");
-                        Console.ReadKey();
-                        System.Environment.Exit(0); break;
-                    case 1:
-                        AgregarContacto(agenda);
-                        continue;
-                    case 2:
-                        EliminarContacto(agenda);
-                        continue;
-                    case 3:
-                        LlamarContacto(agenda);
-                        continue;
-                    case 4:
-                        agenda.ListarContactos();
-                        continue;
-                    case 5:
-                        agenda.TraerContactoFrecuente();
-                        continue;
+                    int opcMenu = Validacion.Menu("1- Agregar Contacto \n2- Eliminar Contacto \n3- Llamar Contacto \n4- Listar Contactos \n5- Mostrar Contacto Frecuente \n0- Salir", 0, 5);
+                    switch (opcMenu)
+                    {
+                        case 0:
+                            Console.WriteLine("Gracias por utilizar nustro sistema. \nPresione una tecla para continuar.");
+                            Console.ReadKey();
+                            System.Environment.Exit(0); break;
+                        case 1:
+                            AgregarContacto(agenda);
+                            continue;
+                        case 2:
+                            EliminarContacto(agenda);
+                            continue;
+                        case 3:
+                            LlamarContacto(agenda);
+                            continue;
+                        case 4:
+                            agenda.ListarContactos();
+                            continue;
+                        case 5:
+                            agenda.TraerContactoFrecuente();
+                            continue;
 
-                    default: break;
+                        default: break;
 
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error durante la ejecución del comando. Por favor intente nuevamente. Mensaje: " + ex.Message);
+                }
+                   
+
             }
         }
+            
         private static void AgregarContacto(Agenda agenda)
         {
             
