@@ -16,7 +16,7 @@ namespace CAI_2_3_2023_POO_Agenda_Intento3
             {
                 try
                 {
-                    int opcMenu = Validacion.Menu("1. Agregar Contacto \n2. Eliminar Contacto \n3. Visualizar Contacto Frecuente \n4. Llamar Contacto \n0. Salir");
+                    int opcMenu = Validacion.Menu("1. Agregar Contacto \n2. Eliminar Contacto \n3. Visualizar Contacto Frecuente \n4. Llamar Contacto \n0. Salir", 0, 4);
                     switch (opcMenu)
                     {
                         case 0:Console.WriteLine("Gracias por utilizar nuestro sistema. \nPresione una tecla para salir."); break;
