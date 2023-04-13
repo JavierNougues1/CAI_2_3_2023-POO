@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,16 +49,41 @@ namespace CAI_2_3_2023_POO_Agenda_Intento3
 
         private static void VisualizarContactoFrecuente(Agenda agenda)
         {
-            throw new NotImplementedException();
+            agenda.TraerContactoFrecuente();
         }
 
         private static void EliminarContacto(Agenda agenda)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int codigo = Validacion.Int("Codigo:");
+                agenda.EliminarContacto(codigo);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en los datos: " + ex.Message);
+            }
         }
 
         private static void AgregarContacto(Agenda agenda)
         {
+            try
+            {
+                int codigo = Validacion.Int("Codigo:");
+                string nombre = Validacion.String("Nombre:");
+                string apellido = Validacion.String("Apellido:");
+                string telefono = Validacion.String("Telefono:");
+                string direccion = Validacion.String("Dirección:");
+                DateTime fecha = Validacion.Fecha("Fecha de Nacimiento:");
+                int llamadas = 0;
+
+                agenda.AgregarContacto(codigo, nombre, apellido, telefono, direccion, fecha, llamadas);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en el ingreso de datos: " + ex.Message);
+            }
 
         }
     }

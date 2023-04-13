@@ -8,9 +8,9 @@ namespace CAI_2_3_2023_POO_Agenda_Intento3
 {
     internal class Agenda
     {
-        private string _nombre { get; set; }
-        private string _tipo { get; set; }
-        private int _cantMaxContactos { get; set; }
+        private string _nombre { get; }
+        private string _tipo { get; }
+        private int _cantMaxContactos { get; }
         private List<Contacto> _contactos = new List<Contacto>();
 
         public Agenda(string nombre, string tipo, int cantMaxContactos)//, List<Contacto> contactos)
