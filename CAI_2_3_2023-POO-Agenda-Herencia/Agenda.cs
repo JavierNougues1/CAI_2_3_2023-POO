@@ -66,6 +66,15 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
             }
             return contactoFrecuente;
         }
+
+        public void VisualizarContactos()
+        {
+            if (ExistenContactos())
+            {
+                _contactos.ToString();
+            }
+            else { throw new Exception("No tiene contactos registrados."); }
+        }
         private bool ContactoExiste(int codigoContacto)
         {
             bool existe = false;
@@ -78,6 +87,16 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
                 break;
             }
             return existe;
+        }
+        private bool ExistenContactos()
+        {
+            bool hayContactos = true;
+            if (_contactos.Count == 0)
+            {
+                hayContactos = false;
+            }
+            return hayContactos;
+
         }
     }
 }
