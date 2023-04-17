@@ -12,10 +12,6 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
             {
                 Console.WriteLine(mensaje);
                 input = int.Parse(Console.ReadLine());  
-                if (input == null)
-                {
-                    throw new Exception("Debe ingresar un valor");
-                }
                 if (input > max || input < min)
                 {
                     throw new Exception("El valor ingresado no se encuentra dentro de los parámetros disponibles.");
@@ -36,10 +32,6 @@ namespace CAI_2_3_2023_POO_Agenda_Intento2
             {
                 Console.WriteLine(mensaje);
                 input = int.Parse(Console.ReadLine());
-                if (input == null)
-                {
-                    throw new Exception("Debe ingresar un valor");
-                }
                 if (!int.TryParse(input.ToString(), out int num))
                 {
                     throw new Exception("El valor ingresado debe ser un número.");

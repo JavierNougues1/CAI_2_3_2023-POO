@@ -11,12 +11,6 @@ namespace CAI_2_3_2023_POO_Agenda
             {
                 Console.WriteLine(mensaje);
                 input = int.Parse(Console.ReadLine());
-                if (input == null)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Debe ingresar un valor.");
-                    continue;
-                }
                 if (input.ToString().Length == 0)
                 {
                     Console.Clear();
@@ -42,12 +36,6 @@ namespace CAI_2_3_2023_POO_Agenda
                 Console.WriteLine(mensaje);
                 input = int.Parse(Console.ReadLine());
                 if (input.ToString().Length == 0)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Debe ingresar un código.");
-                    continue;
-                }
-                if (input == null)
                 {
                     Console.Clear();
                     Console.WriteLine("Debe ingresar un código.");

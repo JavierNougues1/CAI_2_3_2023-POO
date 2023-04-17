@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAI_2_3_2023-POO-Agenda-Int
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAI_2_3_2023-POO-Agenda-Intento3", "CAI_2_3_2023-POO-Agenda-Intento3\CAI_2_3_2023-POO-Agenda-Intento3.csproj", "{ADD59164-7598-4F15-A68E-32AD838CE8E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAI_2_3_2023-POO-Agenda-Herencia", "CAI_2_3_2023-POO-Agenda-Herencia\CAI_2_3_2023-POO-Agenda-Herencia.csproj", "{910B7C4F-6396-41CB-993B-90A6F21BA4D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{ADD59164-7598-4F15-A68E-32AD838CE8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD59164-7598-4F15-A68E-32AD838CE8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD59164-7598-4F15-A68E-32AD838CE8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910B7C4F-6396-41CB-993B-90A6F21BA4D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910B7C4F-6396-41CB-993B-90A6F21BA4D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910B7C4F-6396-41CB-993B-90A6F21BA4D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910B7C4F-6396-41CB-993B-90A6F21BA4D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
