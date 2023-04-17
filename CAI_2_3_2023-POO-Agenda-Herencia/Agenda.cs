@@ -23,7 +23,7 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
         }
         public void AgregarContacto(Contacto nuevoContacto)
         {
-            if (_contactos.Count >= _cantContactosAgenda)
+            if (CantidadMaxContactos())
             {
                 throw new Exception("Agenda llena.");
             }
@@ -52,7 +52,7 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
         {
             int contadorLlamadas = 0;
             Contacto contactoFrecuente = null;
-            if (_contactos.Count == 0)
+            if (!ExistenContactos())
             {
                 throw new Exception("No tiene contactos registrados.");
             }
@@ -109,6 +109,15 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
             }
             return hayContactos;
 
+        }
+        private bool CantidadMaxContactos()
+        {
+            bool cantMaxAlcanzada = true;
+            if (_contactos.Count < _cantContactosAgenda)
+            {
+                cantMaxAlcanzada = false;
+            }
+            return cantMaxAlcanzada;
         }
     }
 }
