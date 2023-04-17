@@ -15,7 +15,7 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
             {
                 try
                 {
-                    int opcMenu = Validacion.Menu("1. Agregar Contacto \n 2. Eliminar Contacto \n3. Visualizar Contacto Frecuente \n4. Visualizar Contactos \n0. Salir", 0, 4);
+                    int opcMenu = Validacion.Menu("1. Agregar Contacto \n2. Eliminar Contacto \n3. Visualizar Contacto Frecuente \n4. Visualizar Contactos \n0. Salir", 0, 4);
                     switch (opcMenu)
                     {
                         case 0:
@@ -114,7 +114,7 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
         {
             try
             {
-
+                agenda.VisualizarContactos();
             }
             catch (Exception ex)
             { 

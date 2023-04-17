@@ -71,9 +71,21 @@ namespace CAI_2_3_2023_POO_Agenda_Herencia
         {
             if (ExistenContactos())
             {
-                _contactos.ToString();
+                foreach (Contacto c in _contactos)
+                {
+                    if (c is ContactoEmpresa)
+                    {
+                        Console.WriteLine($"Razón Social: {((ContactoEmpresa)c)._razonSocialContacto}");
+                    }
+                    if (c is ContactoPersona)
+                    {
+                        Console.WriteLine($"Nombre y Apellido: {((ContactoPersona)c)._nombraContacto} {((ContactoPersona)c)._apellidoContacto}");
+                    }
+                }
             }
             else { throw new Exception("No tiene contactos registrados."); }
+            Console.WriteLine("\nPresione una tecla para continuar.");
+            Console.ReadKey();
         }
         private bool ContactoExiste(int codigoContacto)
         {
