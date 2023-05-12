@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace Utilidades
 {
-    public class Class1
+    public class PedirUtilidad
     {
+        public static string PedirString(string mensaje)
+        {
+            string input;
+            while (true)
+            {
+                Console.WriteLine(mensaje);
+                input = Console.ReadLine();
+                if (input is null || input.Length == 0)
+                {
+                    Console.WriteLine("Ingrese una cadena.");
+                    continue;
+                }
+                if (int.TryParse(input, out int num))
+                {
+                    Console.WriteLine("Ingrese una cadena.");
+                    continue;
+                }
+                break;
+            }
+            return input;
+        }
     }
 }
