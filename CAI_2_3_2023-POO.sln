@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAI_2_3_2023-POO-Facultad",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facultad-Version2", "Facultad-Version2\Facultad-Version2.csproj", "{3841078B-3749-43CA-A54B-BCF8F95F8698}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilidades", "Utilidades\Utilidades.csproj", "{233591D8-CEAC-47BA-BA77-4D73E58131DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{3841078B-3749-43CA-A54B-BCF8F95F8698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3841078B-3749-43CA-A54B-BCF8F95F8698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3841078B-3749-43CA-A54B-BCF8F95F8698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233591D8-CEAC-47BA-BA77-4D73E58131DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233591D8-CEAC-47BA-BA77-4D73E58131DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233591D8-CEAC-47BA-BA77-4D73E58131DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233591D8-CEAC-47BA-BA77-4D73E58131DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
