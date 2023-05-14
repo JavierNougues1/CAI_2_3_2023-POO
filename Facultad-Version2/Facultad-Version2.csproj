@@ -7,7 +7,7 @@
     <ProjectGuid>{3841078B-3749-43CA-A54B-BCF8F95F8698}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Facultad_Version2</RootNamespace>
-    <AssemblyName>Facultad_Version2</AssemblyName>
+    <AssemblyName>Facultad-Version2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumno.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Facultad.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilidades\Utilidades.csproj">
+      <Project>{233591d8-ceac-47ba-ba77-4d73e58131da}</Project>
+      <Name>Utilidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
